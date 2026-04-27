@@ -23,8 +23,11 @@ document.getElementById("Login001").addEventListener("submit", function(e){
     let email = document.getElementById("email").innerText;
     let senha = document.getElementById("senha").innerText;
 
-    
-    if (senha.lenght < 8){
+    if (email.includes("@")){
+        alert("E-mail Inválido")
+    }
+
+    if (senha.length < 8){
         alert("Senha muito curta!")
     }
     
@@ -35,7 +38,7 @@ document.getElementById("Login001").addEventListener("submit", function(e){
     else{
         let checker = localStorage.getItem(email);
         if (checker === senha) {
-            mensagem.innerHTML = "<div> <p> Login com sucesso </p> </div>;"
+            mensagem.innerHTML = "<div> <p> Login com sucesso </p> </div>"
         }
         else{
              mensagem.innerHTML = "<div> <p> Dados incorretos </p> </div>"
