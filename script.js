@@ -3,8 +3,11 @@ document.getElementById("Login001").addEventListener("submit", function(e){
     let email = document.getElementById("email").value;
     let senha = document.getElementById("senha").value;
 
-    if (email) !includes("@");{
-        alert("jadgfhgdsj")
+
+
+    if (!email.includes("@")) {
+        alert("E-mail Inválido")
+        console.log("GigaPenis")
     }
 
     
