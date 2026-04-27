@@ -22,10 +22,10 @@ document.getElementById("toggle").onclick = () => {
 document.getElementById("Login001").addEventListener("submit", function(e){
     e.preventDefault();
 
-    let email = document.getElementById("email").innerText;
-    let senha = document.getElementById("senha").innerText;
+    let email = document.getElementById("email").value;
+    let senha = document.getElementById("senha").value;
 
-    if (email.includes("@")){
+    if (!email.includes("@")){
         alert("E-mail Inválido")
         cancel = 1;
     }
@@ -35,9 +35,11 @@ document.getElementById("Login001").addEventListener("submit", function(e){
         cancel = 1;
     }
     
-    if (mode == 2 && cancel == 0){
+    if (mode == 2){
+        if (cancel == 0){
         localStorage.setItem(email,senha);
         alert("cadastrado com sucesso");
+        }
     }
     else{
         let checker = localStorage.getItem(email);
