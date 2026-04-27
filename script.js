@@ -19,6 +19,16 @@ document.getElementById("toggle").onclick = () => {
     cancel = 0;
 }
 
+document.getElementById("esqueceu").onclick = () => {
+let recuperar = prompt("Insira o E-mail Cadastrado");
+ if (!recuperar.includes("@")){
+        alert("E-mail Inválido")
+    }
+    else{
+        alert("E-mail Enviado para " + recuperar);
+    }
+}
+
 document.getElementById("Login001").addEventListener("submit", function(e){
     e.preventDefault();
 
