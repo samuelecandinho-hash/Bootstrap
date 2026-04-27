@@ -31,4 +31,15 @@ document.getElementById("Login001").addEventListener("submit", function(e){
         alert("Senha muito curta!")
     }
     
+    if (mode == 2){
+        localStorage.setItem(email,senha)
+        alert("cadastrado cm sucesso");
+    }
+    else{
+        let checker = localStorage.getItem(email);
+        if (salva === senha) {
+            mensagem.innerHTML = <div> <p> Penis </p> </div>;
+        }
+    }
+
 })
