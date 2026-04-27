@@ -23,22 +23,22 @@ document.getElementById("Login001").addEventListener("submit", function(e){
     let email = document.getElementById("email").innerText;
     let senha = document.getElementById("senha").innerText;
 
-    if (!email.includes("@")) {
-        alert("E-mail Inválido")
-
-    }
+    
     if (senha.lenght < 8){
         alert("Senha muito curta!")
     }
     
     if (mode == 2){
         localStorage.setItem(email,senha)
-        alert("cadastrado cm sucesso");
+        alert("cadastrado com sucesso");
     }
     else{
         let checker = localStorage.getItem(email);
-        if (salva === senha) {
-            mensagem.innerHTML = <div> <p> Penis </p> </div>;
+        if (checker === senha) {
+            mensagem.innerHTML = "<div> <p> Login com sucesso </p> </div>;"
+        }
+        else{
+             mensagem.innerHTML = "<div> <p> Dados incorretos </p> </div>"
         }
     }
 
