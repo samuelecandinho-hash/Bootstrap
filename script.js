@@ -1,6 +1,7 @@
 let mode = 1
 // 1 = login
 // 2 = cadastro
+cancel = 0;
 
 document.getElementById("toggle").onclick = () => {
     if (mode == 2){
@@ -9,12 +10,13 @@ document.getElementById("toggle").onclick = () => {
         mode = 2;
     }
     if (mode == 2){
-    document.getElementById("Titulo").innerText = "Cadastro com Bootstrap";
+    document.getElementById("Titulo").innerText = "Cadastro";
     }
     if (mode == 1){
-    document.getElementById("Titulo").innerText = "Login com Bootstrap";
+    document.getElementById("Titulo").innerText = "Login";
     }
     console.log(mode);
+    cancel = 0;
 }
 
 document.getElementById("Login001").addEventListener("submit", function(e){
@@ -25,14 +27,16 @@ document.getElementById("Login001").addEventListener("submit", function(e){
 
     if (email.includes("@")){
         alert("E-mail Inválido")
+        cancel = 1;
     }
 
     if (senha.length < 8){
         alert("Senha muito curta!")
+        cancel = 1;
     }
     
-    if (mode == 2){
-        localStorage.setItem(email,senha)
+    if (mode == 2 && cancel == 0){
+        localStorage.setItem(email,senha);
         alert("cadastrado com sucesso");
     }
     else{
